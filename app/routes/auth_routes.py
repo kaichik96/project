@@ -30,7 +30,7 @@ def login():
             session['user_id'] = user.id
             flash('Login successful.')
 
-            # Сохраняем в cookie при флажке "Remember me"
+
             response = make_response(redirect(url_for('project.dashboard')))
             if form.remember_me.data:
                 response.set_cookie('remember_me', user.username, max_age=30 * 24 * 60 * 60)  # 30 дней
@@ -45,6 +45,6 @@ def login():
 def logout():
     session.pop('user_id', None)
     response = make_response(redirect(url_for('auth.login')))
-    response.set_cookie('remember_me', '', expires=0)  # очищаем куку
+    response.set_cookie('remember_me', '', expires=0)
     flash('You have been logged out.')
     return response

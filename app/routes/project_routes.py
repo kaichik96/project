@@ -12,7 +12,7 @@ def save_file(file):
         return None
     filename = secure_filename(file.filename)
     filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
-    # Убедимся, что папка существует
+
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
     file.save(filepath)
     return filename

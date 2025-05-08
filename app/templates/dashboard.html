@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
+
 <h2>Your Projects</h2>
+
+
+<div class="logo-container">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Логотип">
+</div>
 
 <form method="GET" action="{{ url_for('project.dashboard') }}" class="mb-4">
   <div class="input-group">
@@ -27,14 +33,12 @@
         <a href="{{ url_for('project.edit_project', id=p.id) }}" class="btn btn-outline-secondary btn-sm">Edit</a>
         <a href="{{ url_for('project.delete_project', id=p.id) }}" class="btn btn-outline-danger btn-sm">Delete</a>
 
-
         <button class="btn btn-outline-dark btn-sm" onclick="copyLink('{{ url_for('project.project_detail', id=p.id, _external=True) }}')">📋 Copy</button>
       </div>
     </div>
   </div>
   {% endfor %}
 </div>
-
 
 <script>
   function copyLink(link) {

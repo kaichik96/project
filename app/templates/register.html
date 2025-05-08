@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Register{% endblock %}
 {% block content %}
+
+
+<div class="logo-container">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Логотип">
+</div>
+
 <h2>Register</h2>
 <form method="POST">
   {{ form.hidden_tag() }}
@@ -14,4 +20,5 @@
   </div>
   {{ form.submit(class="btn btn-primary") }}
 </form>
+
 {% endblock %}

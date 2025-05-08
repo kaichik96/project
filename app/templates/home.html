@@ -2,5 +2,13 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 
-<p><em>create by Dulat and Yernat</em></p>
+
+<div class="logo-container">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Логотип">
+</div>
+
+<p style="margin-top: 20px; text-align: center;">
+  <em>create by Dulat  and Yernat/em>
+</p>
+
 {% endblock %}
